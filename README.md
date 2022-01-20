@@ -1,5 +1,6 @@
 # ActivityTrack
 
+run  `npm install`
 run  `npm install -g expo-cli`
 
 install prettier
