@@ -5,12 +5,16 @@ import { PickerItem } from "react-native/Libraries/Components/Picker/Picker";
 
 import Header from "./components/header";
 import Activitys from "./components/activity_items";
+import Footer from "./components/footer";
+import FloatingButton from "./components/floatingbutton";
 
 export default function App() {
   const [act, setAct] = useState([
     { text: "buy coffee", key: "1" },
     { text: "create app", key: "2" },
     { text: "play on the switch", key: "3" },
+    { text: "buy coffee", key: "4" },
+ 
   ]);
 
   const printValues = (e) => {
@@ -20,7 +24,7 @@ export default function App() {
 
   return (
     <View>
-      <Header />
+      <Header/>
       <View>
         <View style={styles.list}>
           <FlatList
@@ -28,7 +32,9 @@ export default function App() {
             renderItem={({ item }) => <Activitys item={item} />}
           />
         </View>
+        <FloatingButton/>
       </View>
+      <Footer/>
     </View>
   );
 }
@@ -38,6 +44,6 @@ const styles = StyleSheet.create({
     backgroundColor: "coral",
   },
   list: {
-    marginBottom: 20,
+    marginBottom: 100,
   },
 });

@@ -11,17 +11,19 @@
   },
   "dependencies": {
     "eslint": "^8.7.0",
-    "expo": "~44.0.0",
+    "expo": "^44.0.0",
     "expo-status-bar": "~1.2.0",
     "format": "^0.2.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-floating-action": "^1.22.0",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "lint": "^0.7.0",
+    "lint": "^1.1.2",
     "prettier": "2.5.1"
   },
   "private": true
