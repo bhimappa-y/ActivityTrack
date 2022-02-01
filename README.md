@@ -12,3 +12,5 @@ check code
 format code
 
 `npx prettier --write .`
+
+run npm server `npm start`
