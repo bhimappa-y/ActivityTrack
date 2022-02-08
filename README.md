@@ -1,12 +1,12 @@
 # ActivityTrack
 
-run  `npm install`
-run  `npm install -g expo-cli`
+run `npm install`
+run `npm install -g expo-cli`
 
 install prettier
 `npm install --save-dev --save-exact prettier`
 
-check code 
+check code
 `npx prettier --check .`
 
 format code

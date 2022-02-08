@@ -1,49 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { StyleSheet, Text, SafeAreaView, View, FlatList } from "react-native";
-import { PickerItem } from "react-native/Libraries/Components/Picker/Picker";
+import React, { Component } from "react";
+import { Text } from "react-native";
+import Dog from "./components/app_footer";
+import AppHeader from "./components/app_header";
+import AppFooter from "./components/app_footer";
+import { StyleSheet, View } from "react-native";
 
-import Header from "./components/header";
-import Activitys from "./components/activity_items";
-import Footer from "./components/footer";
-import FloatingButton from "./components/floatingbutton";
-
-export default function App() {
-  const [act, setAct] = useState([
-    { text: "buy coffee", key: "1" },
-    { text: "create app", key: "2" },
-    { text: "play on the switch", key: "3" },
-    { text: "buy coffee", key: "4" },
- 
-  ]);
-
-  const printValues = (e) => {
-    e.preventDefault();
-    console.log(act.text, act.key);
-  };
-
-  return (
-    <View>
-      <Header/>
-      <View>
-        <View style={styles.list}>
-          <FlatList
-            data={act}
-            renderItem={({ item }) => <Activitys item={item} />}
-          />
-        </View>
-        <FloatingButton/>
-      </View>
-      <Footer/>
-    </View>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <>
+        <AppHeader />
+        <AppFooter />
+      </>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "coral",
-  },
-  list: {
-    marginBottom: 100,
-  },
-});
