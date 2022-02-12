@@ -31,7 +31,7 @@ class AppFooter extends Component {
   render() {
     return (
       <>
-        <Asha name="Munkustrap" />
+        <Asha name="Hi, This your Activity Tracker!!." />
         <Asha name="Spot" />
       </>
     );
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     margin: 20,
     height: 40,
+    flex:1,
   },
 });
 

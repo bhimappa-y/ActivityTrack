@@ -14,11 +14,11 @@ class AppHeader extends Component {
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    marginTop: 80,
-    paddingLeft: 20,
+    marginTop: 50,
     elevation: 5,
-    height: 40,
-    color: "coral",
+    alignItems: "center",
+    height:40,
+    backgroundColor: 'coral',
   },
 });
 
