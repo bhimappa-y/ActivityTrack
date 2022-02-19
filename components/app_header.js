@@ -6,7 +6,7 @@ class AppHeader extends Component {
   render() {
     return (
       <View style={styles.buttonStyle}>
-        <Text>Hello, I am your cat!</Text>
+        <Text>Welcome To Activity Tracker</Text>
       </View>
     );
   }
@@ -14,11 +14,11 @@ class AppHeader extends Component {
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    marginTop: 50,
+    justifyContent: "center",
     elevation: 5,
     alignItems: "center",
-    height:40,
-    backgroundColor: 'coral',
+    height: 40,
+    backgroundColor: "coral",
   },
 });
 

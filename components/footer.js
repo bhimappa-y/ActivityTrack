@@ -6,10 +6,8 @@ class Asha extends Component {
 
   render() {
     return (
-      <View >
-        <Text style={styles.buttonStyle}>
-         {this.props.name}
-        </Text>
+      <View style={styles.buttonStyle}>
+        <Text>{this.props.name}</Text>
       </View>
     );
   }
@@ -28,12 +26,12 @@ class Footer extends Component {
 const styles = StyleSheet.create({
   buttonStyle: {
     flex: 0,
+    justifyContent: "center",
+    alignItems: "center",
     elevation: 5,
-    height:40,
-    textAlign: "center",
-    backgroundColor:'coral',
+    height: 40,
+    backgroundColor: "coral",
   },
 });
 
 export default Footer;
-

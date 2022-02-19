@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     margin: 20,
     height: 40,
-    flex:1,
+    flex: 1,
   },
 });
 

@@ -1,64 +1,51 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity,Image, Alert } from "react-native";
-
-
-
-
-
-
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Image,
+  Button,
+  Alert,
+} from "react-native";
 
 export default class Floating extends Component {
- 
-  SampleFunction=()=>{
- 
-      Alert.alert("Floating Button Clicked");
- 
-  }
- 
- 
+  SampleFunction = () => {
+    Alert.alert("Floating Button Clicked");
+  };
+
   render() {
- 
     return (
- 
       <View style={styles.MainContainer}>
- 
-        <TouchableOpacity activeOpacity={0.5} onPress={this.SampleFunction} style={styles.TouchableOpacityStyle} >
- 
-          <Image source={{uri : 'https://reactnativecode.com/wp-content/uploads/2017/11/Floating_Button.png'}} 
-          
-                 style={styles.FloatingButtonStyle} />
-       
-        </TouchableOpacity>
- 
+        <Button
+          title="Add some friends"
+          onPress={() => this.props.navigation.navigate("Friends")}
+        />
       </View>
     );
   }
 }
- 
+
 const styles = StyleSheet.create({
- 
   MainContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor : '#F5F5F5'
+    flex: 0.1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5F5F5",
   },
- 
-  TouchableOpacityStyle:{
- 
-    position: 'absolute',
+
+  TouchableOpacityStyle: {
+    position: "absolute",
     width: 50,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     right: 30,
     bottom: 30,
   },
- 
+
   FloatingButtonStyle: {
- 
-    resizeMode: 'contain',
+    resizeMode: "contain",
     width: 50,
     height: 50,
-  }
+  },
 });
