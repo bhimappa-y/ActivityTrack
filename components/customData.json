@@ -1,10 +1,20 @@
 {
-    "type":"Fruits",
-    "example":[
-        {"name":"banana"},
-        {"name":"apple"},
-        {"name":"orange"},
-        {"name":"mango"},
-        {"name":"grape"}
-    ]
- }
+  "name": "Alex",
+  "subject": [
+    {
+      "id": 1,
+      "name": "Study Biology",
+      "grade": "B"
+    },
+    {
+      "id": 2,
+      "name": "Study Chemistry",
+      "grade": "C"
+    },
+    {
+      "id": 3,
+      "name": "Study Mathametics",
+      "grade": "B"
+    }
+  ]
+}

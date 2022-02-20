@@ -1,26 +1,16 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Button } from "react-native";
 
-class HomeActivity extends React.Component {
-  static navigationOptions = {
-    title: "Home",
-    headerStyle: {
-      backgroundColor: "#03A9F4",
-    },
-    headerTintColor: "#fff",
-    headerTitleStyle: {
-      fontWeight: "bold",
-    },
-  };
+class ViewActivity extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.route.params);
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.headerText}>Home Activity</Text>
-        <Button
-          title="Go to Profile Activity"
-          onPress={() => this.props.navigation.navigate("Profile")}
-        />
+        <Text style={styles.headerText}>{this.props.route.params.name}</Text>
       </View>
     );
   }
@@ -41,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeActivity;
+export default ViewActivity;
