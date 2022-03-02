@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Button, Text, View, StyleSheet } from "react-native";
 
-class Asha extends Component {
-  state = { isHungry: true };
-
+class FooterName extends Component {
+ 
   render() {
     return (
       <View style={styles.buttonStyle}>
@@ -17,7 +16,7 @@ class Footer extends Component {
   render() {
     return (
       <>
-        <Asha name="Hi, This your Activity Tracker!!." />
+        <FooterName name="Hi, This your Activity Tracker!!." />
       </>
     );
   }

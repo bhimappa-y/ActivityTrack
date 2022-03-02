@@ -10,7 +10,7 @@ class ViewActivity extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.headerText}>{this.props.route.params.name}</Text>
+        <Text style={styles.headerText}>{this.props.route.params.username}</Text>
       </View>
     );
   }

@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import { Text, TextInput } from "react-native";
+import { Text, TextInput,Alert } from "react-native";
 import { StyleSheet, View } from "react-native";
 import { ScrollView, Button } from "react-native";
 import AppHeader from "./app_header";
 import Footer from "./footer";
 import data from "./customData.json";
+import * as SQLite from 'expo-sqlite';
 
-const word = data;
+
+
 
 class AddActivity extends Component {
+
+
   state = {
     datasource: [],
     username: "",
@@ -17,15 +21,70 @@ class AddActivity extends Component {
     discription: "",
   };
 
+  constructor(props){
+    super(props)
+  }
+
+
+
   _storeData = async () => {
-    let party = {
-      username: this.state.username,
-      time: this.state.time,
-      repetation: this.state.repetation,
-      discription: this.state.discription,
-    };
-    let data = JSON.stringify(party);
-    console.log(data);
+    
+    var that = this;
+    const {username} = this.state;
+    const {time} = this.state;
+    const {repetation} = this.state;
+    const {discription} = this.state;
+
+    alert(username, time, repetation, discription);
+
+    const db = SQLite.openDatabase("TestDb.db");
+     
+    db.transaction((tx) => {
+      tx.executeSql(
+        "create table if not exists table_activity (id integer primary key not null, username text, time text, repetation int, discription text);"
+      );
+    })
+
+    
+
+    db.transaction(function(tx) {
+      tx.executeSql(
+        'INSERT INTO table_activity (username, time, repetation, discription) VALUES (?,?,?,?)',
+        [username, time, repetation, discription],
+        (tx, results) => {
+          console.log('Results', results.rowsAffected);
+          if (results.rowsAffected > 0) {
+            Alert.alert(
+              'Success',
+              'You are Registered Successfully',
+              [
+                {
+                  text: 'Ok',
+                  onPress: () =>
+                    that.props.navigation.navigate('Activity Tracker'),
+                },
+              ],
+              {cancelable: false},
+            );
+          } else {
+            alert('Registration Failed');
+          }
+        },
+      );
+    });
+
+    db.transaction(
+      (tx) => {
+        //console.log(this.state.username)
+          tx.executeSql("select * from table_activity", [], (_, { rows }) =>
+          console.log(JSON.stringify(rows))
+        );
+      }
+    );
+
+
+
+    
   };
 
   render() {
